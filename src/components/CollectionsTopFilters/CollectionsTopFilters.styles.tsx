@@ -14,11 +14,10 @@ const CollectionsTopFilter = styled.button<CollectionsTopFilterProps>`
   color: inherit;
   padding: 10px 20px;
   margin-right: 20px;
-  font-size: 24px;
-  background-color: ${(props) => (props.isSelected ? '#008aff' : 'transparent')};;
+  font-size: 18px;
+  background-color: ${(props) => (props.isSelected ? '#008aff' : 'transparent')};
   border-radius: 8px;
 `;
-
 
 export {
   CollectionsTopFiltersWrapper,
