@@ -1,3 +1,1 @@
-export {}
-
-const a = 5
+export { default as Header } from './Header/Header';
