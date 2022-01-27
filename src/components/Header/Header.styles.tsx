@@ -4,8 +4,8 @@ import { Container } from '../../styles';
 const HeaderWrapper = styled.header`
   width: 100%;
   height: 76px;
-  color: #fff;
-  background-color: #1f2d3d;
+  color: ${(props) => props?.theme?.color?.primary};
+  background-color: ${(props) => props?.theme?.background?.primary};
 `;
 
 const HeaderContainer = styled(Container)`
@@ -16,7 +16,9 @@ const HeaderContainer = styled(Container)`
   font-size: 18px;
 `;
 
-const HeaderLogo = styled.div``;
+const HeaderLogo = styled.div`
+  user-select: none;
+`;
 
 const HeaderLogoLink = styled.a`
   display: block;
