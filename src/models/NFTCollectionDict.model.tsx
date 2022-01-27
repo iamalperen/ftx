@@ -12,4 +12,5 @@ export interface NFTCollectionDict {
   avatarImageId: number | undefined;
   cardImageUrl: string | undefined;
   cardImageId: number | undefined;
+  id: number | undefined;
 };

@@ -10,7 +10,7 @@ interface CollectionsListProps {
 const CollectionsList: FC<CollectionsListProps> = ({ collections }) => (
   <S.CollectionsListWrapper data-testid='CollectionsList'>
     {collections.map(collection => (
-      <S.CollectionsListCard>
+      <S.CollectionsListCard key={collection?.collectionDict?.id}>
         <Link to={`/collection-detail/${'alperen-test'}`}>
           <S.CollectionsListCardImgContainer>
             <S.CollectionsListCardImg src={collection?.first_nft?.imageUrl} />
