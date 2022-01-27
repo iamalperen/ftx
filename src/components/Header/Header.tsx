@@ -16,7 +16,7 @@ const Header: FC<HeaderProps> = ({ switchTheme }) => {
     <S.HeaderWrapper data-testid='Header'>
       <S.HeaderContainer>
         <S.HeaderLogo>
-          <S.HeaderLogoLink>
+          <S.HeaderLogoLink href="/">
             {mode === 'dark' && (
               <S.HeaderLogoImg src={logoDark} alt='FTX NFT Marketplace' />
             )}

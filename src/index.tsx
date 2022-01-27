@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './containers';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { App, CollectionDetail, Collections, NFTDetail } from './containers';
 
 ReactDOM.render(
   <App>
-    <div>FTX NFT</div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='*' element={<Collections />} />
+        <Route path='/collection-detail/:name' element={<CollectionDetail />} />
+        <Route path='/nft-detail/:id' element={<NFTDetail />} />
+      </Routes>
+    </BrowserRouter>
   </App>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
