@@ -38,7 +38,6 @@ const CollectionsListLoading = styled.div`
   padding: 32px;
 `;
 
-
 const StyledSpinner = styled.svg`
   animation: rotate 2s linear infinite;
   width: 50px;

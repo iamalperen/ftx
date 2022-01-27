@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 const CollectionsListWrapper = styled.div`
   display: grid;
+  position: relative;
   grid-template-columns: 1fr;
   column-gap: 30px;
   row-gap: 30px;
+
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -62,6 +64,11 @@ const CollectionsListCardItemNum = styled.h5`
   font-weight: 400;
 `;
 
+const CollectionsListNoResults = styled.p`
+  font-size: 32px;
+  width: 400px;
+`;
+
 export {
   CollectionsListWrapper,
   CollectionsListCard,
@@ -70,4 +77,5 @@ export {
   CollectionsListCardDetails,
   CollectionsListCardTitle,
   CollectionsListCardItemNum,
+  CollectionsListNoResults,
 };

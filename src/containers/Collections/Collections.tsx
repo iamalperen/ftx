@@ -26,9 +26,7 @@ const Collections: FC<CollectionsProps> = () => {
   };
 
   useEffect(() => {
-    setIsLoading(true);
     setPage(1);
-    fetchCollections(0, ITEMS_PER_PAGE, filter);
   }, [filter]);
 
   useEffect(() => {
@@ -47,30 +45,33 @@ const Collections: FC<CollectionsProps> = () => {
     </S.CollectionsHeader>
   );
 
+  const showLoadingSpinner = (): object => (
+    <S.CollectionsListLoading>
+      <S.StyledSpinner viewBox='0 0 50 50'>
+        <circle className='path' cx='25' cy='25' r='20' fill='none' strokeWidth='6' />
+      </S.StyledSpinner>
+    </S.CollectionsListLoading>
+  );
+
+  const showPagination = (): object => (
+    <ThemeProvider>
+      <p />
+      <Pagination
+        totalPages={totalPages}
+        currentPage={page}
+        onChange={(currentPage) => setPage(currentPage)}
+      />
+      <p />
+    </ThemeProvider>
+  );
+
   const showCollectionsBody = (): object => (
     <S.CollectionsBody>
       <S.CollectionsContainer>
         <CollectionsTopFilters filter={filter} setFilter={setFilter} />
         {!isCollectionsLoading && (<CollectionsList collections={collections} />)}
-        {isCollectionsLoading && (
-          <S.CollectionsListLoading>
-            <S.StyledSpinner viewBox='0 0 50 50'>
-              <circle className='path' cx='25' cy='25' r='20' fill='none' strokeWidth='6' />
-            </S.StyledSpinner>
-          </S.CollectionsListLoading>)
-        }
-        {!isCollectionsLoading && (
-          <ThemeProvider>
-            <p />
-            <Pagination
-              totalPages={totalPages}
-              currentPage={page}
-              onChange={(currentPage) => setPage(currentPage)}
-            />
-            <p />
-          </ThemeProvider>
-        )
-        }
+        {!isCollectionsLoading && collections.length > 0 && showPagination()}
+        {isCollectionsLoading && showLoadingSpinner()}
       </S.CollectionsContainer>
     </S.CollectionsBody>
   );

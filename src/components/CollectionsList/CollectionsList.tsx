@@ -11,7 +11,7 @@ const CollectionsList: FC<CollectionsListProps> = ({ collections }) => (
   <S.CollectionsListWrapper data-testid='CollectionsList'>
     {collections.map(collection => (
       <S.CollectionsListCard key={collection?.collectionDict?.id}>
-        <Link to={`/collection-detail/${'alperen-test'}`}>
+        <Link to={`/collection-detail/${collection?.collectionDict?.name}`}>
           <S.CollectionsListCardImgContainer>
             <S.CollectionsListCardImg src={collection?.first_nft?.imageUrl} />
           </S.CollectionsListCardImgContainer>
@@ -22,6 +22,9 @@ const CollectionsList: FC<CollectionsListProps> = ({ collections }) => (
         </Link>
       </S.CollectionsListCard>
     ))}
+    {collections.length === 0 && (
+      <S.CollectionsListNoResults>No Collections Found!</S.CollectionsListNoResults>
+    )}
   </S.CollectionsListWrapper>
 );
 
