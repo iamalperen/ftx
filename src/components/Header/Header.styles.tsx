@@ -4,8 +4,8 @@ import { Container } from '../../styles';
 const HeaderWrapper = styled.header`
   width: 100%;
   height: 76px;
-  color: ${(props) => props?.theme?.color?.primary};
-  background-color: ${(props) => props?.theme?.background?.primary};
+  color: ${(props) => props.theme.color.primary};
+  background-color: ${(props) => props.theme.background.primary};
 `;
 
 const HeaderContainer = styled(Container)`
