@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Container } from '../../styles/common';
 
 const CollectionsWrapper = styled.div`

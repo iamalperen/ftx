@@ -34,7 +34,7 @@ const Collections: FC<CollectionsProps> = () => {
     const start = (page - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
     fetchCollections(start, end, filter);
-  }, [page]);
+  }, [page, filter]);
 
   const showCollectionsHeader = (): object => (
     <S.CollectionsHeader>
