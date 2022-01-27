@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Container } from '../../styles/common';
 
 const CollectionsWrapper = styled.div`
@@ -31,6 +31,46 @@ const CollectionsBody = styled.div`
   padding: 30px 0;
 `;
 
+const CollectionsListLoading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+`;
+
+
+const StyledSpinner = styled.svg`
+  animation: rotate 2s linear infinite;
+  width: 50px;
+  height: 50px;
+
+  & .path {
+    stroke: #5652BF;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+`;
+
 export {
   CollectionsWrapper,
   CollectionsContainer,
@@ -38,4 +78,6 @@ export {
   CollectionsHeaderTitle,
   CollectionsHeaderDescription,
   CollectionsBody,
+  StyledSpinner,
+  CollectionsListLoading,
 };

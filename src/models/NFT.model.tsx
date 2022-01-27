@@ -1,0 +1,32 @@
+import { NFTAuction } from './NFTAuction.model';
+
+export interface NFT {
+  id: string;
+  name: string;
+  description: string | undefined;
+  issuer: string;
+  collection: string;
+  series: string;
+  solMintAddress: string | undefined;
+  ethContractAddress: string | undefined;
+  imageUrl: string | undefined;
+  videoUrl: string | undefined;
+  animationUrl: string | undefined;
+  thumbnailUrl: string | undefined;
+  attributes: Record<string, string> | undefined;
+  redeemable: boolean;
+  redeemed: boolean;
+  offerPrice: number | undefined;
+  auction: NFTAuction | undefined;
+  depositMethods?: string[];
+  withdrawalMethods?: string[];
+  auctionReservationPrice?: number;
+  owned?: boolean;
+  bid?: number | undefined;
+  buyFee?: number | undefined;
+  isBestBid?: boolean;
+  quoteCurrency: string;
+  featured?: boolean;
+  created_at?: string;
+  hidden?: boolean | undefined;
+};

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import * as S from './CollectionsTopFilters.styles';
 import { COLLECTION_TOP_FILTERS } from '../../constants';
+import * as S from './CollectionsTopFilters.styles';
 
 
 interface CollectionsTopFiltersProps {
