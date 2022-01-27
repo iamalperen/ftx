@@ -17,7 +17,7 @@ const CollectionsList: FC<CollectionsListProps> = ({ collections }) => (
           </S.CollectionsListCardImgContainer>
           <S.CollectionsListCardDetails>
             <S.CollectionsListCardTitle>{collection?.collectionDict?.displayName}</S.CollectionsListCardTitle>
-            <S.CollectionsListCardItemNum>5 Items</S.CollectionsListCardItemNum>
+            <S.CollectionsListCardItemNum>{collection?.total} Item{collection?.total > 1 ? 's' : ''}</S.CollectionsListCardItemNum>
           </S.CollectionsListCardDetails>
         </Link>
       </S.CollectionsListCard>

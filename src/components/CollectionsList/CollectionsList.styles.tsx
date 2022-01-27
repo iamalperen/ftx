@@ -48,18 +48,17 @@ const CollectionsListCardImg = styled.img`
 
 const CollectionsListCardDetails = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 `;
 
 const CollectionsListCardTitle = styled.h4`
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 const CollectionsListCardItemNum = styled.h5`
   font-size: 12px;
-  margin: 2px 0 0 0;
+  margin: 4px 0 0 0;
   font-weight: 400;
 `;
 
