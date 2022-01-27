@@ -1,25 +1,37 @@
-import React, { FC } from 'react'
-/** import { BsMoon, BsSun } from 'react-icons/bs' */
-import { BsSun } from 'react-icons/bs'
-import * as S from './Header.styles'
-import logoDark from '../../assets/logo-dark.png'
+import React, { FC, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import { BsMoon, BsSun } from 'react-icons/bs';
+import logoDark from '../../assets/logo-dark.png';
+import logoLight from '../../assets/logo-light.png';
+import * as S from './Header.styles';
 
 interface HeaderProps {
+  switchTheme: Function;
 }
 
-const Header: FC<HeaderProps> = () => (
-  <S.HeaderWrapper data-testid='Header'>
-    <S.HeaderContainer>
-      <S.HeaderLogo>
-        <S.HeaderLogoLink>
-          <S.HeaderLogoImg src={logoDark} alt='FTX NFT Marketplace' />
-        </S.HeaderLogoLink>
-      </S.HeaderLogo>
-      <S.HeaderThemeSwitch>
-        <BsSun />
-      </S.HeaderThemeSwitch>
-    </S.HeaderContainer>
-  </S.HeaderWrapper>
-)
+const Header: FC<HeaderProps> = ({ switchTheme }) => {
+  const { mode } = useContext(ThemeContext);
 
-export default Header
+  return (
+    <S.HeaderWrapper data-testid='Header'>
+      <S.HeaderContainer>
+        <S.HeaderLogo>
+          <S.HeaderLogoLink>
+            {mode === 'dark' && (
+              <S.HeaderLogoImg src={logoDark} alt='FTX NFT Marketplace' />
+            )}
+            {mode === 'light' && (
+              <S.HeaderLogoImg src={logoLight} alt='FTX NFT Marketplace' />
+            )}
+          </S.HeaderLogoLink>
+        </S.HeaderLogo>
+        <S.HeaderThemeSwitch onClick={() => switchTheme()}>
+          {mode === 'dark' && <BsSun />}
+          {mode === 'light' && <BsMoon />}
+        </S.HeaderThemeSwitch>
+      </S.HeaderContainer>
+    </S.HeaderWrapper>
+  );
+};
+
+export default Header;

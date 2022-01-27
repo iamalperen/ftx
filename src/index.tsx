@@ -1,13 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Normalize } from 'styled-normalize'
-import { Header } from './components'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { App } from './containers';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Normalize />
-    <Header />
+  <App>
     <div>FTX NFT</div>
-  </React.StrictMode>,
-  document.getElementById('root'),
-)
+  </App>,
+  document.getElementById('root')
+);
