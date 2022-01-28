@@ -33,6 +33,30 @@ NFT Detail Page
 
 ![](https://github.com/iamalperen/ftx/blob/main/ss/detail.png?raw=true)
 
+**Folder Structure**
+
+- [**assets**](assets)
+- [**common**](common)
+    - [**hooks**](common/hooks)
+    - [**utils**](common/utils)
+- [**components**](components)
+    - [**CollectionDetailNFTList**](components/CollectionDetailNFTList)
+    - [**CollectionsList**](components/CollectionsList)
+    - [**CollectionsTopFilters**](components/CollectionsTopFilters)
+    - [**Header**](components/Header)
+    - [**NFTDetailCard**](components/NFTDetailCard)
+- [**constants**](constants)
+- [**containers**](containers)
+    - [**App**](containers/App)
+    - [**CollectionDetail**](containers/CollectionDetail)
+    - [**Collections**](containers/Collections)
+    - [**NFTDetail**](containers/NFTDetail)
+- [**models**](models)
+- [**services**](services)
+- [**styles**](styles)
+    - [**modes**](styles/modes)
+
+
 
 ## Used Technologies
 - React
