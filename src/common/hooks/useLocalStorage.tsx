@@ -18,6 +18,7 @@ function useLocalStorage<T>(key: string, initialValue: T) {
         value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
       localStorage.setItem(key, JSON.stringify(valueToStore));
+      // eslint-disable-next-line no-empty
     } catch (error) {}
   };
   return [storedValue, setValue] as const;
