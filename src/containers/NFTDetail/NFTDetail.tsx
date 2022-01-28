@@ -2,8 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getNFTDetail } from '../../services/nft.detail.service';
 import * as S from './NFTDetail.styles';
-import { NFTDetailsBody } from './NFTDetail.styles';
-import NFTDetailCard from '../../components/NFTDetailCard/NFTDetailCard';
+import { NFTDetailCard } from '../../components';
 
 interface NFTDetailProps {
 }
