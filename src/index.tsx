@@ -9,7 +9,7 @@ ReactDOM.render(
       <Routes>
         <Route path='*' element={<Collections />} />
         <Route path='/collection-detail/:name' element={<CollectionDetail />} />
-        <Route path='/nft-detail/:id' element={<NFTDetail />} />
+        <Route path='/nft-detail/:id/:name' element={<NFTDetail />} />
       </Routes>
     </BrowserRouter>
   </App>,

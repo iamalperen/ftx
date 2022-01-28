@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { NFT } from '../../models';
 import * as S from './CollectionDetailNFTList.styles';
+import { urlEncode } from '../../common';
 
 
 interface CollectionDetailNFTListProps {
@@ -13,7 +14,7 @@ const CollectionDetailNFTList: FC<CollectionDetailNFTListProps> = ({ nfts }) => 
     {
       nfts.map((nft: NFT) => (
         <S.CollectionDetailNFTCard>
-          <Link to={`/nft-detail/${nft?.id}`}>
+          <Link to={urlEncode(`/nft-detail/${nft?.id}/${nft?.name}`)}>
             <S.CollectionDetailNFTCardImgContainer>
               <S.CollectionDetailNFTCardImg src={nft?.imageUrl} />
             </S.CollectionDetailNFTCardImgContainer>

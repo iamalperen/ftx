@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import {
-  CollectionsListCard, CollectionsListCardDetails,
+  CollectionsListCard,
+  CollectionsListCardDetails,
   CollectionsListCardImg,
-  CollectionsListCardImgContainer, CollectionsListCardItemNum, CollectionsListCardTitle, CollectionsListNoResults,
+  CollectionsListCardImgContainer,
+  CollectionsListCardItemNum,
+  CollectionsListCardTitle,
+  CollectionsListNoResults,
   CollectionsListWrapper,
 } from '../CollectionsList/CollectionsList.styles';
 
